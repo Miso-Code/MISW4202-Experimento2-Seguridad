@@ -64,7 +64,7 @@ services:
     restart: on-failure
 
   kong:
-    image: "${KONG_DOCKER_TAG:-kong:latest}"
+    image: "gdiener/kong-with-oidc"
     environment:
       <<: *kong-env
       KONG_ADMIN_ACCESS_LOG: /dev/stdout

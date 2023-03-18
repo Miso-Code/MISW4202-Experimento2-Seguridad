@@ -33,10 +33,9 @@ Este comando desplegará:
 
 ## Explicación servicios desplegados
 
-### Base de datos
+### Base de datos (solo se creara, mas no se utilizara)
 
-La base de datos se desplegará en el puerto 5432. El usuario y contraseña de la base de datos es `kong`. La base de
-datos se llama `kong`.
+La base de datos se desplegará en el puerto `5432`. El usuario y contraseña de la base de datos es `kong`. La base de datos se llama `kong`. 
 
 ### API Gateway
 
@@ -44,18 +43,17 @@ El API Gateway se desplegará en el puerto 8000. El administrador del API Gatewa
 
 ### Aplicación
 
-La aplicación se desplegará en el puerto 5000. La aplicación tiene 4 endpoints:
+La aplicación se desplegará en el puerto `5000`. La aplicación tiene el siguiente endpoint:
 
-- `/api/v1/endpoint1` - Endpoint público
-- `/api/v1/endpoint2` - Endpoint protegido por OAuth2
-- `/api/v1/endpoint3` - Endpoint protegido por JWT
-- `/api/v1/endpoint4` - Endpoint protegido por OAuth2 y Rate Limiting
+- `/api/v1/clients` - Endpoint protegido por OAuth2 (JWT)
 
- Esta app corre en el puerto 5000, sin embargo este no es expuesto ya que correra en la red privada de docker y sólo podrá ser accesado por otros servicios (el API Gateway lo expone). Para exponer la app descomentar la configuración de port en de la app en [docker-compose.yml](docker-compose.yml#L28)
+ Este endpoint, será el encargado de devolver la información de los clientes, con los planes de venta y las ventas realizadas, además de validar que el usuario que ingresa tenga el rol `seller` y sea un usuario válido para consultar los datos.
+
+ Esta app corre en el puerto `5000`, sin embargo este no es expuesto, ya que correrá en la red privada de docker y solo podrá ser accedida por otros servicios (el API Gateway lo expone). Para exponer la app descomentar la configuración de port en de la app en [docker-compose.yml](docker-compose.yml#L28)
 
 ### Dashboard
 
-El dashboard se desplegará en el puerto 8080. Este dashboard utiliza el API Gateway para obtener la información de
+El dashboard se desplegará en el puerto `8080`. Este dashboard utiliza el API Gateway para obtener la información de
 los servicios desplegados. Se utiliza Konga para el dashboard.
 
 ## Configuración
@@ -64,7 +62,7 @@ los servicios desplegados. Se utiliza Konga para el dashboard.
 
 #### Crear usuario de Konga
 
-Para crear un usuario de Konga, ir a la url del dashboard de Konga (http://localhost:8080) y crear un usuario.
+Para crear un usuario de Konga, ir a la url del dashboard de Konga [http://localhost:8080](http://localhost:8080) y crear un usuario.
 
 ![Create  User](./images/konga-create-user.png)
 
@@ -86,8 +84,11 @@ campos qu debe llenar en Konga.
 
 ##  OAuth2 Server
 
-We provide a mock server for Oauth2 requests that runs public in [http://localhost:8080/](http://localhost:8080/) based on OpenID Connect specification (On top of Oauth2) which can be accesed from [http://localhost:8080/default/.well-known/openid-configuration](http://localhost:8080/default/.well-known/openid-configuration)
+Proporcionamos un servidor ficticio para solicitudes de Oauth2 que se ejecuta de forma pública en [http://localhost:8080/](http://localhost:8080/) basado en la especificación de OpenID Connect (sobre Oauth2), al cual se puede acceder desde [http://localhost:8080/default/.well-known/openid-configuration](http://localhost:8080/default/.well-known/openid-configuration)
 
+## Presentación
+
+[Enlace a la presentación](https://docs.google.com/presentation/d/1uYt95urNN9boWJWflE8Pyh2lTtzfPkI7/edit?usp=sharing&ouid=114669455645104582686&rtpof=true&sd=true)
 ## Demo (video)
 
 

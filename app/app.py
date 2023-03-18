@@ -4,26 +4,6 @@ from flask_api import status
 
 app = Flask(__name__)
 
-
-@app.route("/api/v1/endpoint1")
-def endpoint1():
-    return "Endpoint público"
-
-
-@app.route("/api/v1/endpoint2")
-def endpoint2():
-    return "Endpoint protegido por OAuth2.0"
-
-
-@app.route("/api/v1/endpoint3")
-def endpoint3():
-    return "Endpoint protegido por JWT"
-
-
-@app.route("/api/v1/endpoint4")
-def endpoint4():
-    return "Endpoint protegido por OAuth2.0 y Rate Limiting"
-
 @app.route("/api/v1/clients")
 def clients():
     try:
