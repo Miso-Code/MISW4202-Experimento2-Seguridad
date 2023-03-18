@@ -1,5 +1,12 @@
 # Experimento 2
 
+## Integrantes
+
+- Brayan Henao
+- Rodrigo Escobar
+- Felipe Cerquera
+- Erik Loaiza
+
 ## Objetivo
 
 El objetivo de este experimento es demostrar las estrategias de seguridad para la aplicación utilizando un API Gateway.
@@ -77,12 +84,10 @@ campos qu debe llenar en Konga.
 
 ![Konga token](./images/register-konga-kong-admin-api.png)
 
-## Kong
-
-### Crear un servicio
-
-WIP (Video???)
-
 ##  OAuth2 Server
 
 We provide a mock server for Oauth2 requests that runs public in [http://localhost:8080/](http://localhost:8080/) based on OpenID Connect specification (On top of Oauth2) which can be accesed from [http://localhost:8080/default/.well-known/openid-configuration](http://localhost:8080/default/.well-known/openid-configuration)
+
+## Demo (video)
+
+

@@ -64,7 +64,7 @@ services:
     restart: on-failure
 
   kong:
-    build: .
+    image: "${KONG_DOCKER_TAG:-kong:latest}"
     environment:
       <<: *kong-env
       KONG_ADMIN_ACCESS_LOG: /dev/stdout
