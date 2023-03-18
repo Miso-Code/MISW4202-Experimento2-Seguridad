@@ -88,7 +88,9 @@ Proporcionamos un servidor ficticio para solicitudes de Oauth2 que se ejecuta de
 
 ## Presentación
 
+<img width="962" alt="image" src="https://user-images.githubusercontent.com/25392457/226115808-7dbb0987-fb7a-4685-b0a6-d25fe90b128b.png">
 [Enlace a la presentación](https://docs.google.com/presentation/d/1uYt95urNN9boWJWflE8Pyh2lTtzfPkI7/edit?usp=sharing&ouid=114669455645104582686&rtpof=true&sd=true)
+
 ## Demo (video)
 
 
